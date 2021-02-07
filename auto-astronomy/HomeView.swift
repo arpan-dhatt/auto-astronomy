@@ -17,7 +17,7 @@ struct HomeView: View {
                 Image(systemName: "plus").font(.system(size: 28, weight:.ultraLight))
                 Text("Gallary")
             }.tag(Tab.gallary)
-            GallaryView(model: self.model).tabItem {
+            MapView(viewModel: model).tabItem {
                 Image(systemName: "map.fill").font(.system(size: 28, weight:.ultraLight))
                 Text("Map")
             }.tag(Tab.map)

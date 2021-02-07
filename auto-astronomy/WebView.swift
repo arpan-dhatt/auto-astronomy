@@ -58,7 +58,7 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
     func updateUIView(_ webView: WKWebView, context: Context) {
         if url == .localUrl {
             // Load local website
-            if let url = Bundle.main.url(forResource: "website", withExtension: "html", subdirectory: "Website") {
+            if let url = Bundle.main.url(forResource: "website", withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
             }
         } else if url == .publicUrl {
