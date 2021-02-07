@@ -17,19 +17,15 @@ struct GallaryView: View {
         VStack {
             if !hideTitle {
                 HStack {
-                    Text(selection).font(.title)
-                    Spacer()
-                    Button(action: {
-                        if selection == "Galaxies" {
-                            selection = "Nebulae"
-                        } else {
+                    Text("Galaxies").font(selection == "Galaxies" ? .title : .body).foregroundColor(selection == "Galaxies" ? .primary : .blue).onTapGesture {
+                        withAnimation {
                             selection = "Galaxies"
                         }
-                    }) {
-                        if selection == "Galaxies" {
-                            Text("Nebulae")
-                        } else {
-                            Text("Galaxies")
+                    }
+                    Spacer()
+                    Text("Nebulae").font(selection == "Nebulae" ? .title : .body).foregroundColor(selection == "Nebulae" ? .primary : .blue).onTapGesture {
+                        withAnimation {
+                            selection = "Nebulae"
                         }
                     }
                 }.padding()
