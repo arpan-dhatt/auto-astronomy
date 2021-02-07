@@ -31,9 +31,9 @@ struct GallaryView: View {
                 }.padding()
             }
             if selection == "Galaxies" {
-                GalaxyView(heroBinding: $hideTitle)
+                GalaxyView(heroBinding: $hideTitle).transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
             } else {
-                NebulaView(heroBinding: $hideTitle)
+                NebulaView(heroBinding: $hideTitle).transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
             }
         }
         
