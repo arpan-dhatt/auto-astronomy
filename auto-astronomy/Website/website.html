@@ -3,51 +3,22 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Content-Style-Type" content="text/css">
+      <link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
   <title>Local Website</title>
-  <style>
-      h1 {
-          font-size: 60px;
-          color: black;
-      }
-
-    h2 {
-        font-size: 40px;
-    }
-
-    p {
-        font-size: 30px;
-        color: green;
-    }
-  </style>
 </head>
+
 <body>
     <h1>SwiftUI JavaScript Interaction</h1>
 
-    <p>This example shows how to interact between iOS native app and a web app through JavaScript Functions.</p>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js" charset="utf-8"></script>
 
-    <p id="output"></p>
+<div id="aladin-lite-div" style="width:400px;height:700px;"></div>
 
-    <script type = "text/javascript">
-        sendStringValueToIOS();
-        sendJsonValueToIOS();
-        
-        // This function sends a simple json value to iOS app
-        function sendJsonValueToIOS() {
-            // Here iOSNative is the name we passed from iOS app
-            window.webkit.messageHandlers.iOSNative.postMessage({Name : "John Doe"});
-        }
+<script type="text/javascript" src="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+    var aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:1.5, target: "trifid"});
+</script>
     
-        // This function sends a string value to iOS app
-        function sendStringValueToIOS() {
-            // Here iOSNative is the name we passed from iOS app
-            window.webkit.messageHandlers.iOSNative.postMessage("Bla Bla Bla");
-        }
-    
-        function valueGotFromIOS(value) {
-            document.getElementById("output").innerHTML = value;
-        }
-    
-        
-    </script>
 </body>
 </html>

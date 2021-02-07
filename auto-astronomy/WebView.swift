@@ -41,7 +41,6 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
     func makeUIView(context: Context) -> WKWebView {
         // Enable javascript in WKWebView
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
         
         let configuration = WKWebViewConfiguration()
         // Here "iOSNative" is our delegate name that we pushed to the website that is being loaded
