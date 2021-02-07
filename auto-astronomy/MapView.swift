@@ -12,10 +12,30 @@ struct MapView: View {
     @State var showLoader = false
     @State var message = ""
     @State var webTitle = ""
+    @State private var showAlert = false
     
     var body: some View {
         ZStack {
-            WebView(url: .localUrl, viewModel: viewModel)
+            VStack{
+                WebView(url: .localUrl, viewModel: viewModel)
+            }
+            VStack{
+                Spacer()
+                Button(action: {
+                    showAlert = true
+                }) {
+                    Text("Create Job")
+                        .foregroundColor(.white)
+                        .padding(.vertical)
+                        .frame(width: UIScreen.main.bounds.width / 2)
+                        .background(LinearGradient(gradient: .init(colors: [.blue,.purple]), startPoint: .leading, endPoint: .trailing))
+                        .clipShape(Capsule())
+                }
+                .padding()
+            }.alert(isPresented: $showAlert) {
+                Alert(title: Text("Custom Picture"), message: Text("A Ccustom picture has been requested. Check Orders"), dismissButton: .default(Text("Done")))
+            }
+            .padding(.horizontal).contentShape(Rectangle())
         }
     }
 }
