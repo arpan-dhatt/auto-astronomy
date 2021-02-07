@@ -11,7 +11,7 @@ import SwiftUI
 struct auto_astronomyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
