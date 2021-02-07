@@ -33,7 +33,7 @@ struct MapView: View {
                 }
                 .padding()
             }.alert(isPresented: $showAlert) {
-                Alert(title: Text("Custom Picture"), message: Text("A Ccustom picture has been requested. Check Orders"), dismissButton: .default(Text("Done")))
+                Alert(title: Text("Custom Coordinates"), message: Text("A custom set of coordinates have been requested. Check Jobs"), dismissButton: .default(Text("Done")))
             }
             .padding(.horizontal).contentShape(Rectangle())
         }

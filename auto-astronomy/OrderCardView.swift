@@ -101,7 +101,7 @@ struct JobCardView: View {
             }
         }
         DispatchQueue.main.asyncAfter(deadline: .now()+15) {
-            if updates.count == 1 {
+            if updates.count == 2 {
                 updates.append("Focusing")
             }
         }
