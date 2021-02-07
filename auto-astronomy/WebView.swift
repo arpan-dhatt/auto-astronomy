@@ -185,4 +185,3 @@ extension WebView.Coordinator: WKScriptMessageHandler {
         }
     }
 }
-

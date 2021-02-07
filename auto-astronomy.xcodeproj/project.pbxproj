@@ -23,6 +23,7 @@
 		7839A75625CFBAE900585397 /* GalaxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A75525CFBAE900585397 /* GalaxyView.swift */; };
 		7839A75925CFBB0700585397 /* NebulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A75825CFBB0700585397 /* NebulaView.swift */; };
 		7839A75C25CFBB8A00585397 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A75B25CFBB8A00585397 /* CardView.swift */; };
+		7839A76025CFDF0B00585397 /* OrderCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A75F25CFDF0B00585397 /* OrderCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7839A75525CFBAE900585397 /* GalaxyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyView.swift; sourceTree = "<group>"; };
 		7839A75825CFBB0700585397 /* NebulaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NebulaView.swift; sourceTree = "<group>"; };
 		7839A75B25CFBB8A00585397 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7839A75F25CFDF0B00585397 /* OrderCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				7839A75525CFBAE900585397 /* GalaxyView.swift */,
 				7839A75825CFBB0700585397 /* NebulaView.swift */,
 				7839A75B25CFBB8A00585397 /* CardView.swift */,
+				7839A75F25CFDF0B00585397 /* OrderCardView.swift */,
 			);
 			path = "auto-astronomy";
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				6E43752225CFAEFC0059E66C /* OrderView.swift in Sources */,
 				7839A74025CFA9A100585397 /* auto_astronomyApp.swift in Sources */,
 				6E43751625CFABB20059E66C /* ViewModel.swift in Sources */,
+				7839A76025CFDF0B00585397 /* OrderCardView.swift in Sources */,
 				7839A75C25CFBB8A00585397 /* CardView.swift in Sources */,
 				6E43751F25CFAD8E0059E66C /* GallaryView.swift in Sources */,
 				6E43751C25CFACEC0059E66C /* HomeView.swift in Sources */,
