@@ -23,9 +23,10 @@ class ViewModel: ObservableObject {
     
     //WebView
     var webViewNavigationPublisher = PassthroughSubject<WebViewNavigation, Never>()
-        var showWebTitle = PassthroughSubject<String, Never>()
-        var showLoader = PassthroughSubject<Bool, Never>()
-        var valuePublisher = PassthroughSubject<String, Never>()
+    var showWebTitle = PassthroughSubject<String, Never>()
+    var showLoader = PassthroughSubject<Bool, Never>()
+    var valuePublisher = PassthroughSubject<String, Never>()
+    var currentMapCords = " "
 }
 
 enum WebViewNavigation {

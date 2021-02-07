@@ -17,5 +17,32 @@
 
 <script type="text/javascript">
     var aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:1.5, target: "trifid", showReticle: false, showZoomControl: false, showFullscreenControl: false, showLayersControl: false, showGotoControl: false, showShareControl: false, showSimbadPointerControl: false, showFrame: false, fullScreen: false});
+    sendStringValueToIOS();
+    sendStringValueToIOS2();
+    
+    function sendStringValueToIOS() {
+        var cords = aladin.getRaDec();
+        window.webkit.messageHandlers.iOSNative.postMessage(cord.toString());
+    }
+
+    function sendStringValueToIOS2() {
+        window.webkit.messageHandlers.iOSNative.postMessage("Bla Bla Bla");
+    }
+</script>
+<script type = "text/javascript">
+    sendStringValueToIOS();
+    sendJsonValueToIOS();
+    
+    // This function sends a simple json value to iOS app
+    function sendJsonValueToIOS() {
+        // Here iOSNative is the name we passed from iOS app
+        window.webkit.messageHandlers.iOSNative.postMessage({Name : "John Doe"});
+    }
+
+    // This function sends a string value to iOS app
+    function sendStringValueToIOS() {
+        // Here iOSNative is the name we passed from iOS app
+        window.webkit.messageHandlers.iOSNative.postMessage("Bla Bla Bla");
+    }  
 </script>
 </html>

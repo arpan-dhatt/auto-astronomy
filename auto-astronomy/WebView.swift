@@ -59,6 +59,7 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
             // Load local website
             if let url = Bundle.main.url(forResource: "website", withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+                print("hello")
             }
         } else if url == .publicUrl {
             // Load a public website, for example I used here google.com
