@@ -36,7 +36,6 @@ struct GallaryView: View {
                 NebulaView(heroBinding: $hideTitle).transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
             }
         }
-        
     }
 }
 
