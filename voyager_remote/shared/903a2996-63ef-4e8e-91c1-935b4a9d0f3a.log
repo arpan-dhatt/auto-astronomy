@@ -1,0 +1,47 @@
+02/07/2021 10:17:23 AM | INFO | RemoteSetupConnect | 1 | -1
+02/07/2021 10:17:23 AM | INFO | RemoteSetDashboardMode | 2 | -1
+02/07/2021 10:17:23 AM | INFO | RemoteSetDashboardMode | 2 | -1
+02/07/2021 10:17:23 AM | INFO | RemoteGetSetupData | 3 | -1
+02/07/2021 10:17:24 AM | INFO | RemoteCameraShot | 4 | -1
+02/07/2021 10:20:23 AM | ERROR | Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/worker.py", line 975, in perform_job
+    rv = job.perform()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/job.py", line 692, in perform
+    self._result = self._execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/job.py", line 698, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/vivekchari/Downloads/voyager_remote/worker.py", line 23, in launch_session
+    session.execute(session.telescope.RemoteCameraShot(duration))
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 154, in execute
+    result = self.wait()
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 181, in wait
+    result = self.heartbeat()
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 174, in heartbeat
+    j = self.receive()
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 161, in receive
+    raw = self.socket.recv(100000000)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/timeouts.py", line 64, in handle_death_penalty
+    '({0} seconds)'.format(self._timeout))
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (180 seconds)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/worker.py", line 975, in perform_job
+    rv = job.perform()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/job.py", line 692, in perform
+    self._result = self._execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/job.py", line 698, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/Users/vivekchari/Downloads/voyager_remote/worker.py", line 23, in launch_session
+    session.execute(session.telescope.RemoteCameraShot(duration))
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 154, in execute
+    result = self.wait()
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 181, in wait
+    result = self.heartbeat()
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 174, in heartbeat
+    j = self.receive()
+  File "/Users/vivekchari/Downloads/voyager_remote/telscopesession.py", line 161, in receive
+    raw = self.socket.recv(100000000)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/rq/timeouts.py", line 64, in handle_death_penalty
+    '({0} seconds)'.format(self._timeout))
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (180 seconds)
+02/07/2021 10:24:32 AM | INFO | Warm shut down requested
+02/07/2021 10:24:32 AM | INFO | Unsubscribing from channel rq:pubsub:ad08efee71c84d2a9d2a55a0e470a1d1
