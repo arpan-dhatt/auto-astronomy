@@ -16,17 +16,12 @@
 <script type="text/javascript" src="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
 
 <script type="text/javascript">
-    var aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:1.5, target: "trifid", showReticle: false, showZoomControl: false, showFullscreenControl: false, showLayersControl: false, showGotoControl: false, showShareControl: false, showSimbadPointerControl: false, showFrame: false, fullScreen: false});
-    sendStringValueToIOS();
     sendStringValueToIOS2();
+    var aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:1.5, target: "trifid", showReticle: false, showZoomControl: false, showFullscreenControl: false, showLayersControl: false, showGotoControl: false, showShareControl: false, showSimbadPointerControl: false, showFrame: false, fullScreen: false});
     
-    function sendStringValueToIOS() {
-        var cords = aladin.getRaDec();
-        window.webkit.messageHandlers.iOSNative.postMessage(cord.toString());
-    }
-
     function sendStringValueToIOS2() {
-        window.webkit.messageHandlers.iOSNative.postMessage("Bla Bla Bla");
+        var cords = aladin.getRaDec();
+        window.webkit.messageHandlers.iOSNative.postMessage("Yala");
     }
 </script>
 <script type = "text/javascript">
