@@ -14,6 +14,8 @@ struct CardView : View {
     
     @Binding var heroBinding: Bool
     
+    @State private var showAlert = false
+    
     var body: some View{
         ZStack(alignment: .topTrailing){
             VStack{
@@ -28,8 +30,7 @@ struct CardView : View {
                     }.padding()
                     Text(self.data.details).padding(.horizontal)
                     Button(action: {
-                        self.heroBinding.toggle()
-                        self.hero.toggle()
+                        showAlert = true
                     }) {
                         Text("Create Job")
                             .foregroundColor(.white)
@@ -40,6 +41,8 @@ struct CardView : View {
                     }
                     .padding(.bottom, (UIApplication.shared.windows.first?.safeAreaInsets.bottom)! + 15)
                 }
+            }.alert(isPresented: $showAlert) {
+                Alert(title: Text(self.data.name), message: Text("\(self.data.name) has been requested. Check Jobs"), dismissButton: .default(Text("Done")))
             }
             .padding(.horizontal, self.data.expand ? 0 : 20).contentShape(Rectangle())
             if self.data.expand{
@@ -67,6 +70,7 @@ struct Card : Identifiable {
     
     var id : Int
     var image : String
+    var name : String
     var title : String
     var details : String
     var expand : Bool
