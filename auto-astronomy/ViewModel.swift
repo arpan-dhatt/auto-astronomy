@@ -15,6 +15,7 @@ class ViewModel: ObservableObject {
     @Published var page = "home"
     @Published var selectedHomeTab: HomeView.Tab = .orders
     
+    
     //constants
     let PrimaryColor = Color.init(red: 66/255, green: 165/255, blue: 245/255)
     let SecondaryColor = Color.init(red: 126/255, green: 87/255, blue: 194/255)
@@ -35,3 +36,4 @@ enum WebViewNavigation {
 enum WebUrlType {
     case localUrl, publicUrl
 }
+
