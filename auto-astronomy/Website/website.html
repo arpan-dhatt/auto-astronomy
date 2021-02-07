@@ -18,9 +18,9 @@
 <script type="text/javascript">
     sendStringValueToIOS2();
     var aladin = A.aladin('#aladin-lite-div', {survey: "P/DSS2/color", fov:1.5, target: "trifid", showReticle: false, showZoomControl: false, showFullscreenControl: false, showLayersControl: false, showGotoControl: false, showShareControl: false, showSimbadPointerControl: false, showFrame: false, fullScreen: false});
-    
     function sendStringValueToIOS2() {
-        window.webkit.messageHandlers.iOSNative.postMessage("Yala");
+        var s = "sfas"
+        window.webkit.messageHandlers.iOSNative.postMessage(s);
     }
 </script>
 <script type = "text/javascript">
