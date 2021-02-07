@@ -45,9 +45,11 @@ struct JobCardView: View {
                     Spacer()
                 }
                 HStack {
+                    Image(systemName: "timer").font(.system(size: 20, weight: .bold)).matchedGeometryEffect(id: "timeicon", in: animation).foregroundColor(Color.white)
                     Text("\(timeRemaining/3600):\(timeRemaining/60 % 60):\(timeRemaining % 60)").matchedGeometryEffect(id: "time", in: animation)
                     Spacer()
                     Text(status).matchedGeometryEffect(id: "status", in: animation)
+                    Image(systemName: "play.fill").font(.system(size: 20, weight: .bold)).matchedGeometryEffect(id: "statusicon", in: animation).foregroundColor(Color.green)
                 }
 
             } else {
@@ -56,17 +58,21 @@ struct JobCardView: View {
                     Text(updates.last!).matchedGeometryEffect(id: "lastupdate", in: animation).font(.headline).foregroundColor(Color.white)
                 }
                 HStack {
+                    Image(systemName: "timer").font(.system(size: 20, weight: .bold)).matchedGeometryEffect(id: "timeicon", in: animation).foregroundColor(Color.white)
                     Text("\(timeRemaining/3600):\(timeRemaining/60 % 60):\(timeRemaining % 60)").matchedGeometryEffect(id: "time", in: animation)
                     Spacer()
                     Text(status).matchedGeometryEffect(id: "status", in: animation)
+                    Image(systemName: "play.fill").font(.system(size: 20, weight: .bold)).matchedGeometryEffect(id: "statusicon", in: animation).foregroundColor(Color.green)
                 }
                 HStack(alignment: .top) {
                     Image(uiImage: image).resizable().matchedGeometryEffect(id: "image", in: animation).frame(width:UIScreen.main.bounds.width-60, height:UIScreen.main.bounds.width-80).aspectRatio(contentMode: .fit).cornerRadius(10.0).shadow(color: .black, radius: 10, x: 0.0, y: 0.0)
                 }
                 HStack {
+                    Image(systemName: "location.fill").font(.system(size: 20, weight: .bold)).foregroundColor(Color.orange)
                     Text("\(location)")
                     Spacer()
                     Text("Weather: \(weather)")
+                    Image(systemName: "moon.stars.fill").font(.system(size: 20, weight: .bold)).foregroundColor(Color.white)
                 }
                 Map(coordinateRegion: $coordinateRegion, annotationItems: markers){
                     marker in marker.location
