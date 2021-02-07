@@ -12,14 +12,11 @@ import SwiftUI
 import Combine
 import WebKit
 
-// MARK: - WebViewHandlerDelegate
-// For printing values received from web app
 protocol WebViewHandlerDelegate {
     func receivedJsonValueFromWebView(value: [String: Any?])
     func receivedStringValueFromWebView(value: String)
 }
 
-// MARK: - WebView
 struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
     func receivedJsonValueFromWebView(value: [String : Any?]) {
         print("JSON value received from web is: \(value)")
@@ -30,20 +27,15 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
     }
     
     var url: WebUrlType
-    // Viewmodel object
     @ObservedObject var viewModel: ViewModel
-    
-    // Make a coordinator to co-ordinate with WKWebView's default delegate functions
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
     func makeUIView(context: Context) -> WKWebView {
-        // Enable javascript in WKWebView
         let preferences = WKPreferences()
         
         let configuration = WKWebViewConfiguration()
-        // Here "iOSNative" is our delegate name that we pushed to the website that is being loaded
         configuration.userContentController.add(self.makeCoordinator(), name: "iOSNative")
         configuration.preferences = preferences
         
@@ -56,13 +48,11 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
     
     func updateUIView(_ webView: WKWebView, context: Context) {
         if url == .localUrl {
-            // Load local website
             if let url = Bundle.main.url(forResource: "website", withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
                 print("hello")
             }
         } else if url == .publicUrl {
-            // Load a public website, for example I used here google.com
             if let url = URL(string: "https://www.google.com") {
                 webView.load(URLRequest(url: url))
             }
@@ -100,8 +90,7 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
                 self.parent.viewModel.showWebTitle.send(title)
             }
             
-            /* An observer that observes 'viewModel.valuePublisher' to get value from TextField and
-             pass that value to web app by calling JavaScript function */
+            
             valueSubscriber = parent.viewModel.valuePublisher.receive(on: RunLoop.main).sink(receiveValue: { value in
                 let javascriptFunction = "valueGotFromIOS(\(value));"
                 webView.evaluateJavaScript(javascriptFunction) { (response, error) in
@@ -114,25 +103,18 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
                 }
             })
             
-            // Page loaded so no need to show loader anymore
             self.parent.viewModel.showLoader.send(false)
         }
         
-        /* Here I implemented most of the WKWebView's delegate functions so that you can know them and
-         can use them in different necessary purposes */
-        
         func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-            // Hides loader
             parent.viewModel.showLoader.send(false)
         }
         
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-            // Hides loader
             parent.viewModel.showLoader.send(false)
         }
         
         func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-            // Shows loader
             parent.viewModel.showLoader.send(true)
         }
         
@@ -155,27 +137,20 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
             })
         }
         
-        // This function is essential for intercepting every navigation in the webview
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            // Suppose you don't want your user to go a restricted site
-            // Here you can get many information about new url from 'navigationAction.request.description'
             if let host = navigationAction.request.url?.host {
                 if host == "restricted.com" {
-                    // This cancels the navigation
                     decisionHandler(.cancel)
                     return
                 }
             }
-            // This allows the navigation
             decisionHandler(.allow)
         }
     }
 }
 
-// MARK: - Extensions
 extension WebView.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        // Make sure that your passed delegate is called
         if message.name == "iOSNative" {
             if let body = message.body as? [String: Any?] {
                 delegate?.receivedJsonValueFromWebView(value: body)
