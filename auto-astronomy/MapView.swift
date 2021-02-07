@@ -14,7 +14,7 @@ struct MapView: View {
     @State var webTitle = ""
     
     var body: some View {
-        WebView(url: .publicUrl, viewModel: model).overlay (RoundedRectangle(cornerRadius: 4, style: .circular).stroke(Color.gray, lineWidth: 0.5)).padding(.leading, 20).padding(.trailing, 20)    }
+        WebView(url: .localUrl, viewModel: model).overlay (RoundedRectangle(cornerRadius: 4, style: .circular).stroke(Color.gray, lineWidth: 0.5)).padding(.leading, 20).padding(.trailing, 20)    }
 }
 
 struct MapView_Previews: PreviewProvider {
