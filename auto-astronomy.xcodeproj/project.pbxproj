@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E43751325CFAB7C0059E66C /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43751225CFAB7C0059E66C /* InfoModel.swift */; };
+		6E43751625CFABB20059E66C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43751525CFABB20059E66C /* ViewModel.swift */; };
+		6E43751925CFAC660059E66C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43751825CFAC660059E66C /* MainView.swift */; };
+		6E43751C25CFACEC0059E66C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43751B25CFACEC0059E66C /* HomeView.swift */; };
+		6E43751F25CFAD8E0059E66C /* GallaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43751E25CFAD8E0059E66C /* GallaryView.swift */; };
 		7839A74025CFA9A100585397 /* auto_astronomyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A73F25CFA9A100585397 /* auto_astronomyApp.swift */; };
 		7839A74225CFA9A100585397 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A74125CFA9A100585397 /* ContentView.swift */; };
 		7839A74425CFA9A200585397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7839A74325CFA9A200585397 /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E43751225CFAB7C0059E66C /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		6E43751525CFABB20059E66C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		6E43751825CFAC660059E66C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		6E43751B25CFACEC0059E66C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6E43751E25CFAD8E0059E66C /* GallaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryView.swift; sourceTree = "<group>"; };
 		7839A73C25CFA9A100585397 /* auto-astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "auto-astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7839A73F25CFA9A100585397 /* auto_astronomyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auto_astronomyApp.swift; sourceTree = "<group>"; };
 		7839A74125CFA9A100585397 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +67,11 @@
 				7839A74325CFA9A200585397 /* Assets.xcassets */,
 				7839A74825CFA9A200585397 /* Info.plist */,
 				7839A74525CFA9A200585397 /* Preview Content */,
+				6E43751225CFAB7C0059E66C /* InfoModel.swift */,
+				6E43751525CFABB20059E66C /* ViewModel.swift */,
+				6E43751825CFAC660059E66C /* MainView.swift */,
+				6E43751B25CFACEC0059E66C /* HomeView.swift */,
+				6E43751E25CFAD8E0059E66C /* GallaryView.swift */,
 			);
 			path = "auto-astronomy";
 			sourceTree = "<group>";
@@ -140,6 +155,11 @@
 			files = (
 				7839A74225CFA9A100585397 /* ContentView.swift in Sources */,
 				7839A74025CFA9A100585397 /* auto_astronomyApp.swift in Sources */,
+				6E43751625CFABB20059E66C /* ViewModel.swift in Sources */,
+				6E43751F25CFAD8E0059E66C /* GallaryView.swift in Sources */,
+				6E43751C25CFACEC0059E66C /* HomeView.swift in Sources */,
+				6E43751925CFAC660059E66C /* MainView.swift in Sources */,
+				6E43751325CFAB7C0059E66C /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
