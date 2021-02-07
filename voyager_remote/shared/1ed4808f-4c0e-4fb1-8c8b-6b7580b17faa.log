@@ -1,0 +1,8 @@
+02/07/2021 10:26:26 AM | INFO | RemoteSetupConnect | 1 | -1
+02/07/2021 10:26:27 AM | INFO | RemoteSetDashboardMode | 2 | -1
+02/07/2021 10:26:27 AM | INFO | RemoteSetDashboardMode | 2 | -1
+02/07/2021 10:26:27 AM | INFO | RemoteGetSetupData | 3 | -1
+02/07/2021 10:26:27 AM | INFO | RemoteCameraShot | 4 | -1
+02/07/2021 10:29:46 AM | INFO | [32mdefault[39;49;00m: [34mJob OK[39;49;00m (1ed4808f-4c0e-4fb1-8c8b-6b7580b17faa)
+02/07/2021 10:29:46 AM | INFO | Result is kept for 36000 seconds
+02/07/2021 10:50:01 AM | INFO | Cleaning registries for queue: default
