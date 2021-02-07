@@ -14,6 +14,7 @@
 		6E43751F25CFAD8E0059E66C /* GallaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43751E25CFAD8E0059E66C /* GallaryView.swift */; };
 		6E43752225CFAEFC0059E66C /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43752125CFAEFC0059E66C /* OrderView.swift */; };
 		6E43752525CFAF0F0059E66C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43752425CFAF0F0059E66C /* MapView.swift */; };
+		6E43752825CFB0390059E66C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43752725CFB0390059E66C /* WebView.swift */; };
 		7839A74025CFA9A100585397 /* auto_astronomyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A73F25CFA9A100585397 /* auto_astronomyApp.swift */; };
 		7839A74225CFA9A100585397 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839A74125CFA9A100585397 /* ContentView.swift */; };
 		7839A74425CFA9A200585397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7839A74325CFA9A200585397 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		6E43751E25CFAD8E0059E66C /* GallaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryView.swift; sourceTree = "<group>"; };
 		6E43752125CFAEFC0059E66C /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		6E43752425CFAF0F0059E66C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		6E43752725CFB0390059E66C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7839A73C25CFA9A100585397 /* auto-astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "auto-astronomy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7839A73F25CFA9A100585397 /* auto_astronomyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = auto_astronomyApp.swift; sourceTree = "<group>"; };
 		7839A74125CFA9A100585397 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				6E43751B25CFACEC0059E66C /* HomeView.swift */,
 				6E43751E25CFAD8E0059E66C /* GallaryView.swift */,
 				6E43752425CFAF0F0059E66C /* MapView.swift */,
+				6E43752725CFB0390059E66C /* WebView.swift */,
 			);
 			path = "auto-astronomy";
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7839A74225CFA9A100585397 /* ContentView.swift in Sources */,
+				6E43752825CFB0390059E66C /* WebView.swift in Sources */,
 				6E43752225CFAEFC0059E66C /* OrderView.swift in Sources */,
 				7839A74025CFA9A100585397 /* auto_astronomyApp.swift in Sources */,
 				6E43751625CFABB20059E66C /* ViewModel.swift in Sources */,
