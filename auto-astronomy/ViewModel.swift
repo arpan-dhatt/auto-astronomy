@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class ViewModel: ObservableObject {
     @Published var model:InfoModel = InfoModel()
@@ -19,5 +20,18 @@ class ViewModel: ObservableObject {
     let SecondaryColor = Color.init(red: 126/255, green: 87/255, blue: 194/255)
     let TertiaryColor = Color.init(red: 77/255, green: 182/255, blue: 172/255)
     
+    //WebView
+    var webViewNavigationPublisher = PassthroughSubject<WebViewNavigation, Never>()
+        var showWebTitle = PassthroughSubject<String, Never>()
+        var showLoader = PassthroughSubject<Bool, Never>()
+        var valuePublisher = PassthroughSubject<String, Never>()
 }
 
+enum WebViewNavigation {
+    case backward, forward, reload
+}
+
+// For identifying what type of url should load into WebView
+enum WebUrlType {
+    case localUrl, publicUrl
+}
