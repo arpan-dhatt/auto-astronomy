@@ -12,7 +12,7 @@ class ViewModel: ObservableObject {
     @Published var model:InfoModel = InfoModel()
     
     //transition variables
-    @Published var page = "homme"
+    @Published var page = "home"
     @Published var selectedHomeTab: HomeView.Tab = .orders
     
     //constants

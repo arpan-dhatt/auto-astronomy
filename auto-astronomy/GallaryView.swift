@@ -13,7 +13,7 @@ struct GallaryView: View {
     var body: some View {
         NavigationView {
             ObjectGallary()
-        }
+        }.navigationBarHidden(true)
     }
 }
 
