@@ -1,42 +1,53 @@
-//
-//  website.html
-//  auto-astronomy
-//
-//  Created by user175571 on 2/6/21.
-//
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
-      <meta http-equiv="Content-Style-Type" content="text/css">
-      <title>Local Website</title>
-      <style>
-          h1 {
-              font-size: 60px;
-              
-          }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Local Website</title>
+  <style>
+      h1 {
+          font-size: 60px;
+          color: black;
+      }
 
-        h2 {
-            font-size: 40px;
-        }
+    h2 {
+        font-size: 40px;
+    }
 
-        p {
-            font-size: 30px;
-        }
-      </style>
+    p {
+        font-size: 30px;
+        color: green;
+    }
+  </style>
 </head>
-
 <body>
     <h1>SwiftUI JavaScript Interaction</h1>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js" charset="utf-8"></script>
-     
-    <!-- insert this snippet where you want Aladin Lite viewer to appear and after the loading of jQuery
-    <div id="aladin-lite-div" style="width:400px;height:400px;"></div>
-    <script type="text/javascript" src="https://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js" charset="utf-8"></script>
-    <script type="text/javascript">-->
-    
-</body>
 
+    <p>This example shows how to interact between iOS native app and a web app through JavaScript Functions.</p>
+
+    <p id="output"></p>
+
+    <script type = "text/javascript">
+        sendStringValueToIOS();
+        sendJsonValueToIOS();
+        
+        // This function sends a simple json value to iOS app
+        function sendJsonValueToIOS() {
+            // Here iOSNative is the name we passed from iOS app
+            window.webkit.messageHandlers.iOSNative.postMessage({Name : "John Doe"});
+        }
+    
+        // This function sends a string value to iOS app
+        function sendStringValueToIOS() {
+            // Here iOSNative is the name we passed from iOS app
+            window.webkit.messageHandlers.iOSNative.postMessage("Bla Bla Bla");
+        }
+    
+        function valueGotFromIOS(value) {
+            document.getElementById("output").innerHTML = value;
+        }
+    
+        
+    </script>
+</body>
 </html>
