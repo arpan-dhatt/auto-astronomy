@@ -36,7 +36,7 @@ struct JobCardView: View {
         VStack {
             if !expanded {
                 HStack(alignment: .top) {
-                    Image(uiImage: image).resizable().matchedGeometryEffect(id: "image", in: animation).frame(width:100, height:100).aspectRatio(contentMode: .fit).cornerRadius(10.0)
+                    Image(uiImage: image).resizable().matchedGeometryEffect(id: "image", in: animation).frame(width:100, height:100).aspectRatio(contentMode: .fit).cornerRadius(10.0).shadow(color: .black, radius: 10, x: 0.0, y: 0.0)
                     Spacer()
                     VStack(alignment: .center) {
                         Text(object).matchedGeometryEffect(id: "name", in: animation).font(.system(size: 28, weight: .bold)).foregroundColor(Color.white)
@@ -61,7 +61,7 @@ struct JobCardView: View {
                     Text(status).matchedGeometryEffect(id: "status", in: animation)
                 }
                 HStack(alignment: .top) {
-                    Image(uiImage: image).resizable().matchedGeometryEffect(id: "image", in: animation).frame(width:UIScreen.main.bounds.width-60, height:UIScreen.main.bounds.width-80).aspectRatio(contentMode: .fit).cornerRadius(10.0)
+                    Image(uiImage: image).resizable().matchedGeometryEffect(id: "image", in: animation).frame(width:UIScreen.main.bounds.width-60, height:UIScreen.main.bounds.width-80).aspectRatio(contentMode: .fit).cornerRadius(10.0).shadow(color: .black, radius: 10, x: 0.0, y: 0.0)
                 }
                 HStack {
                     Text("\(location)")
@@ -70,13 +70,13 @@ struct JobCardView: View {
                 }
                 Map(coordinateRegion: $coordinateRegion, annotationItems: markers){
                     marker in marker.location
-                }.frame(maxHeight: 150).cornerRadius(10)
+                }.frame(minHeight: 150, maxHeight: 150).cornerRadius(10).shadow(color: .black, radius: 10, x: 0.0, y: 0.0)
             }
         }.onTapGesture {
             withAnimation(.spring()) {
                 expanded.toggle()
             }
-        }.padding(20).frame(width: UIScreen.main.bounds.width-30).background(Color.init(.sRGB, red: 0.1, green: 0.1, blue: 0.3, opacity: 1.0)).foregroundColor(Color.white).cornerRadius(10.0).onAppear {
+        }.padding(20).frame(width: UIScreen.main.bounds.width-30).background(LinearGradient(gradient: Gradient(colors: [.init(.sRGB, red: 0.1, green: 0.1, blue: 0.4, opacity: 1.0),.init(.sRGB, red: 0.3, green: 0.0, blue: 0.4, opacity: 1.0)]), startPoint: .top, endPoint: .bottom)).foregroundColor(Color.white).cornerRadius(10.0).onAppear {
             getCoordinate(addressString: location, completionHandler: {coordinateRegion.center = $0; print($1 ?? "none"); markers.append(Marker(location: MapMarker(coordinate: $0)))})
         }
     }
