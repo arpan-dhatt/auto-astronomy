@@ -42,7 +42,7 @@ struct CardView : View {
                     .padding(.bottom, (UIApplication.shared.windows.first?.safeAreaInsets.bottom)! + 15)
                 }
             }.alert(isPresented: $showAlert) {
-                Alert(title: Text(self.data.name), message: Text("\(self.data.name) has been requested. Check Jobs"), dismissButton: .default(Text("Done")))
+                Alert(title: Text(self.data.title), message: Text("\(self.data.title) has been requested. Check Jobs"), dismissButton: .default(Text("Done")))
             }
             .padding(.horizontal, self.data.expand ? 0 : 20).contentShape(Rectangle())
             if self.data.expand{

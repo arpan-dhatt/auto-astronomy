@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var model: ViewModel
-    @State var selection: String? = nil
+    @State var selection: String? = "gallary"
     
     var body: some View {
         TabView(selection: $model.selectedHomeTab) {
@@ -23,7 +23,7 @@ struct HomeView: View {
             }.tag(Tab.map)
             JobView().tabItem {
                 Image(systemName: "list.bullet").font(.system(size: 28, weight:.ultraLight))
-                Text("Orders")
+                Text("Jobs")
             }.tag(Tab.orders)
         }
     }
