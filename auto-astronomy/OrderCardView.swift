@@ -76,7 +76,7 @@ struct JobCardView: View {
             withAnimation(.spring()) {
                 expanded.toggle()
             }
-        }.padding(20).frame(width: UIScreen.main.bounds.width-30).background(Color.black).foregroundColor(Color.white).cornerRadius(10.0).onAppear {
+        }.padding(20).frame(width: UIScreen.main.bounds.width-30).background(Color.init(.sRGB, red: 0.1, green: 0.1, blue: 0.3, opacity: 1.0)).foregroundColor(Color.white).cornerRadius(10.0).onAppear {
             getCoordinate(addressString: location, completionHandler: {coordinateRegion.center = $0; print($1 ?? "none"); markers.append(Marker(location: MapMarker(coordinate: $0)))})
         }
     }
@@ -88,12 +88,10 @@ struct JobCardView: View {
             if error == nil {
                 if let placemark = placemarks?[0] {
                     let location = placemark.location!
-                        
                     completionHandler(location.coordinate, nil)
                     return
                 }
             }
-                
             completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
         }
     }
