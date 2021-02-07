@@ -12,6 +12,8 @@ struct CardView : View {
     @Binding var data : Card
     @Binding var hero : Bool
     
+    @Binding var heroBinding: Bool
+    
     var body: some View{
         ZStack(alignment: .topTrailing){
             VStack{
@@ -26,7 +28,8 @@ struct CardView : View {
                     }.padding()
                     Text(self.data.details).padding(.horizontal)
                     Button(action: {
-                        
+                        self.heroBinding.toggle()
+                        self.hero.toggle()
                     }) {
                         Text("Create Job")
                             .foregroundColor(.white)
@@ -43,6 +46,7 @@ struct CardView : View {
                 Button(action: {
                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0)){
                         self.data.expand.toggle()
+                        self.heroBinding.toggle()
                         self.hero.toggle()
                     }
                 }) {

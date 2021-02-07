@@ -19,22 +19,21 @@ struct GalaxyView : View {
     ]
     
     @State var hero = false
+    @Binding var heroBinding: Bool
     
     var body: some View{
         VStack{
-            if self.hero == false {
-                Text("Galaxies").font(.title)
-            }
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15){
                     ForEach(0..<self.data.count){i in
                         GeometryReader{g in
-                            CardView(data: self.$data[i], hero: self.$hero)
+                            CardView(data: self.$data[i], hero: self.$hero, heroBinding: self.$heroBinding)
                                 .offset(y: self.data[i].expand ? -g.frame(in: .global).minY : 0)
                                 .opacity(self.hero ? (self.data[i].expand ? 1 : 0) : 1)
                                 .onTapGesture {
                                     withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0)){if !self.data[i].expand{
                                             self.hero.toggle()
+                                            self.heroBinding.toggle()
                                             self.data[i].expand.toggle()
                                         }
                                     }
@@ -54,6 +53,6 @@ struct GalaxyView : View {
 
 struct GalaxyView_Previews: PreviewProvider {
     static var previews: some View {
-        GalaxyView()
+        GalaxyView(heroBinding: .constant(false))
     }
 }
