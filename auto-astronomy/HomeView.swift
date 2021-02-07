@@ -21,7 +21,7 @@ struct HomeView: View {
                 Image(systemName: "map.fill").font(.system(size: 28, weight:.ultraLight))
                 Text("Map")
             }.tag(Tab.map)
-            GallaryView(model: self.model).tabItem {
+            JobView().tabItem {
                 Image(systemName: "list.bullet").font(.system(size: 28, weight:.ultraLight))
                 Text("Orders")
             }.tag(Tab.orders)
